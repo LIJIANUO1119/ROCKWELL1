@@ -1,0 +1,73 @@
+<Page x:Class="SmtLineAllocationUI.ProductLineAllocationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Product Line Allocation">
+  <Grid Background="#F4F6FA">
+    <Border Background="White"
+            CornerRadius="8"
+            Padding="20"
+            Margin="0">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Margin="0,0,0,16">
+          <TextBlock Text="Product Line Allocation"
+                     FontSize="20"
+                     FontWeight="Bold"
+                     Foreground="#333333" />
+          <TextBlock Text="Maintain family groupings and current line allocation."
+                     Margin="0,4,0,0"
+                     Foreground="#777777"
+                     FontSize="12" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    MaxWidth="520"
+                    HorizontalAlignment="Left">
+          <TextBlock Text="Data input"
+                     FontWeight="SemiBold"
+                     Margin="0,0,0,8" />
+
+          <Button x:Name="BtnUploadFamilyGroupings"
+                  Content="Upload family groupings"
+                  Height="36"
+                  Margin="0,0,0,4"
+                  Click="BtnUploadFamilyGroupings_OnClick" />
+
+          <TextBlock Foreground="#777777"
+                     FontSize="11"
+                     TextWrapping="Wrap"
+                     Margin="0,0,0,8">
+            <Run Text="CSV or Excel: ASY, PCB, Family, Family#, Top Priority 1, Top CycleTime, Bot Priority 1, Bot CycleTime, # Circuits. Top/Bot Priority 2 and 3 are stored when present; otherwise blank. Existing ASY rows are updated; other rows are kept." />
+          </TextBlock>
+
+          <Button x:Name="BtnViewFamilyGroupings"
+                  Content="View family groupings"
+                  Height="36"
+                  Margin="0,0,0,14"
+                  Click="BtnViewFamilyGroupings_OnClick" />
+
+          <TextBlock Text="Queries &amp; reports"
+                     FontWeight="SemiBold"
+                     Margin="0,0,0,8" />
+
+          <Button x:Name="BtnQueryAllocation"
+                  Content="Query family groupings"
+                  Height="36"
+                  Margin="0,0,0,8"
+                  Click="BtnQueryAllocation_OnClick" />
+
+          <Button x:Name="BtnExportAllocation"
+                  Content="Export family groupings"
+                  Height="36"
+                  Margin="0,0,0,8"
+                  Click="BtnExportAllocation_OnClick" />
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</Page>
